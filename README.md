@@ -24,3 +24,32 @@ echo 'This is in block 2';
 	<div class="block2"><?php echo $bufferManager->get('block2'); ?></div>
 </div>
 ```
+
+Here is an example for an HTML document, illustrating how it might be used to output the buffers in an HTML document, or in a JSON representation of that document if the request is via AJAX.
+
+```PHP
+<?php
+$bufferManager->start('main');
+include($mainContentFile);
+$bufferManager->end();
+$bufferManager->start('aside');
+include($asideContentFile);
+$bufferManager->end();
+
+if($isAjaxRequest){
+	echo json_encode(Array(
+		'title'=> $pagetitle
+		,'main'=> $bufferManager->get('main')
+		,'aside'=> $bufferManager->get('aside')
+	));
+}else{
+?>
+<!DOCTYPE html>
+<html>
+	<title><?=$pagetitle?></title>
+	…
+	<main><?=$bufferManager->get('main')?></main>
+	<aside><?=$bufferManager->get('aside')?></aside>
+	…
+</html>
+```
