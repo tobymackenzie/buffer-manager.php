@@ -1,5 +1,6 @@
 {
 	"name": "tjm/buffermanager"
+	,"description": "Simple manager of PHP output buffers"
 	,"authors": [
 		{
 			"name": "Toby Mackenzie"
