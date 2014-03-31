@@ -9,7 +9,7 @@
 	]
 	,"autoload": {
 		"psr-4": {
-			"TJM\\Component\\BufferManager": "src"
+			"TJM\\Component\\BufferManager\\": "src"
 		}
 	}
 	,"require": {
