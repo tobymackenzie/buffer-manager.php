@@ -55,7 +55,8 @@ class BufferManager{
 			name(String): if specified, will be a named buffer.  Otherwise, will be a plain buffer.  if $opts is a string, will be used as $opts['name']
 			callable(callable): {see startOutputBuffer()}
 			chunkSize(Integer): {see startOutputBuffer()}
-			erase(Boolean): {see startOutputBuffer()}
+			erase(Boolean): {see startOutputBuffer(): eraseOrFlags}
+			flags(Boolean): {see startOutputBuffer(): eraseOrFlags}
 	*/
 	public function start($opts = Array()){
 		if(is_string($opts)){
@@ -69,13 +70,18 @@ class BufferManager{
 		if(!isset($opts['chunkSize'])){
 			$opts['chunkSize'] = 0;
 		}
-		if(!isset($opts['eraseOrFlags'])){
-			$opts['eraseOrFlags'] = null;
-		}
-		if(isset($opts['name'])){
-			return $this->startNamedBuffer($opts['name'], $opts['callable'], $opts['chunkSize'], $opts['erase']);
+		if(isset($opts['erase'])){
+			$eraseOrFlags = $opts['erase'];
+		}elseif(isset($opts['flags'])){
+			$eraseOrFlags = $opts['flags'];
 		}else{
-			return self::startOutputBuffer($opts['callable'], $opts['chunkSize'], $opts['erase']);
+			$eraseOrFlags = null;
+		}
+
+		if(isset($opts['name'])){
+			return $this->startNamedBuffer($opts['name'], $opts['callable'], $opts['chunkSize'], $eraseOrFlags);
+		}else{
+			return self::startOutputBuffer($opts['callable'], $opts['chunkSize'], $eraseOrFlags);
 		}
 	}
 
