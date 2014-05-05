@@ -107,7 +107,6 @@ class BufferManager{
 		}else{
 			ob_start($callable, $chunkSize, $eraseOrFlags);
 		}
-		return $this;
 		// if($eraseOrFlags === null){
 		// 	if($this->isPHP54plus()){
 		// 		$eraseOrFlags = PHP_OUTPUT_HANDLER_STD;
