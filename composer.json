@@ -1,6 +1,6 @@
 {
 	"name": "tjm/buffermanager"
-	,"description": "Simple manager of PHP output buffers"
+	,"description": "Manager of PHP output buffers"
 	,"authors": [
 		{
 			"name": "Toby Mackenzie"
@@ -8,6 +8,7 @@
 			,"homepage": "http://www.tobymackenzie.com"
 		}
 	]
+	,"license": "BSD-3-Clause"
 	,"autoload": {
 		"psr-4": {
 			"TJM\\Component\\BufferManager\\": "src"
