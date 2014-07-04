@@ -16,6 +16,7 @@ $bufferManager->end();
 
 $bufferManager->start('block2');
 echo 'This is in block 2';
+$bufferManager->end();
 ?>
 <div class="wrapper">
 	<h2>This is block 1's heading</h2>
