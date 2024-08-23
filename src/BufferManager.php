@@ -9,8 +9,8 @@ class BufferManager{
 		named(Boolean|String): whether to end named buffer.  Passing a string does not currently work unless it is the same as the currently opened buffer
 	Return: $return(String): Content of buffer.
 	*/
-	public function end($named = false){
-		if($named){
+	public function end($named = null){
+		if($named || ($named !== false && count($this->openBuffers))){
 			if($named === true){
 				return $this->endNamedBuffer();
 			}else{
