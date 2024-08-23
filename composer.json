@@ -10,6 +10,7 @@
 	]
 	,"license": "BSD-3-Clause"
 	,"autoload": {
+		"classmap": ["src/BufferManager.php"],
 		"psr-4": {
 			"TJM\\Component\\BufferManager\\": "src"
 		}

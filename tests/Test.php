@@ -1,6 +1,6 @@
 <?php
-namespace TJM\Project\Tests;
-use TJM\Component\BufferManager\BufferManager;
+namespace TJM\BufferManager\Tests;
+use TJM\BufferManager;
 use PHPUnit\Framework\TestCase;
 
 class Test extends TestCase{
@@ -16,5 +16,9 @@ class Test extends TestCase{
 		$this->assertTrue($bufferManager->has('a'));
 		$this->assertEquals('Apple',  $bufferManager->get('a'));
 		$this->assertEquals('Banana',  $bufferManager->get('b'));
+	}
+	public function testClassAlias(){
+		$bufferManager = new \TJM\Component\BufferManager\BufferManager();
+		$this->assertFalse($bufferManager->has('a'));
 	}
 }

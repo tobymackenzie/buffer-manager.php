@@ -8,7 +8,7 @@ The most common useage for this class is named output buffers, so that you can b
 
 ```PHP
 <?php
-$bufferManager = new TJM\Component\BufferManager\BufferManager();
+$bufferManager = new TJM\BufferManager();
 
 $bufferManager->start('block1');
 echo 'This is in block 1';

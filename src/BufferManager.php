@@ -1,5 +1,6 @@
 <?php
-namespace TJM\Component\BufferManager;
+namespace TJM;
+class_alias('TJM\BufferManager', 'TJM\Component\BufferManager\BufferManager');
 
 class BufferManager{
 	/*
