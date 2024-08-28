@@ -8,7 +8,7 @@
 			,"homepage": "http://www.tobymackenzie.com"
 		}
 	]
-	,"license": "BSD-3-Clause"
+	,"license": "0BSD"
 	,"autoload": {
 		"classmap": ["src/BufferManager.php"],
 		"psr-4": {
